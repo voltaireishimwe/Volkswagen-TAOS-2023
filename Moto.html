@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="view=device-width, initial-scale=1.0">
+		<title>Shipping</title>
+		<link rel="stylesheet" type="text/css" href="Moto.css">
+		<link rel="icon" href="image/icon.png">
+</head>
+<body>
+	<section class="main">
+		<header>
+		<a href="#"><img src="image/logo.png" class="logo"></a>
+		<div class="toggle"></div>
+		<ul class="navigation">
+			<li><a href="#">Shipping</a></li>
+			<li><a href="#">Store</a></li>
+			<li><a href="#">Contact</a></li>
+			<li><a href="#">Login</a></li>
+		</ul>
+		</header>
+		<div class="content">
+			<h2>Volkswagen<span>Taos</span></h2>
+			<a href="#" class="btn">Unlock Now</a>
+			<img src="image/bike.png" class="bike">
+		</div>
+		<!---Slide content------>
+
+		<div class="slider">
+			<div class="slides active">
+				<h2> <span>Engine</span><br>158 Hp</h2>
+				<h2> <span>Top Speed</span><br>125 Mph</h2>
+
+			</div>
+			<div class="slides">
+				<h2> <span>Mileage</span><br>14 Kmpl</h2>
+				<h2> <span>0-100 Kmph</span><br>4 Seconds</h2>
+			</div>
+			<div class="slides">
+				<h2> <span>Wheels</span><br>17-Inch Alloy</h2>
+				<h2> <span>Tyre Type</span><br>Tubeless</h2>
+			</div>
+			
+		</div>
+		<div class="footer">
+			<ul class="sci">
+				<li><a href="#"><ion-icon name="logo-facebook"></ion-icon></a></li>
+				<li><a href="#"><ion-icon name="logo-twitter"></ion-icon></a></li>
+				<li><a href="#"><ion-icon name="logo-instagram"></ion-icon></a></li>
+			</ul>
+			<div class="dots">
+				<span class="dot active"></span>
+				<span class="dot"></span>
+				<span class="dot"></span>
+			</div>
+		</div>
+	</section>
+	<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+	<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+	<script type="text/javascript">
+				//Navigation
+		const toggle = document.querySelector('.toggle');
+		const navigation = document.querySelector('.navigation');
+		toggle.onclick = function(){
+			toggle.classList.toggle('active');
+			navigation.classList.toggle('active');
+		}
+
+	</script>
+	<script> 
+		const slides = document.querySelectorAll('.slides');
+		const dots = document.querySelectorAll('.dot');
+
+		function setActive(i) {
+			for(slide of slides)
+				slide.classList.remove('active');
+				slides[i].classList.add('active');
+				for(dot of dots)
+				dot.classList.remove('active');
+				dots[i].classList.add('active');
+
+		}
+		for(let j =0; j<dots.length; j++){
+			dots[j].addEventListener('click',function(){
+				setActive(j)
+			})
+		}
+
+	</script>
+
+	</body>
+	</html>
